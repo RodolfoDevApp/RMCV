@@ -1,0 +1,21 @@
+/* botón con icon + texto */
+    :host button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* invierte orden icon-label cuando icon-end */
+    :host(.icon-end) button {
+      flex-direction: row-reverse;
+    }
+
+    /* full width behavior */
+    :host(.full-width) {
+      display: block;
+      width: 100%;
+    }
+    :host(.full-width) button {
+      width: 100%;
+      justify-content: center;
+    }

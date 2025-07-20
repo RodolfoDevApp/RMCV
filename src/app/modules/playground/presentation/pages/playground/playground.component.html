@@ -1,0 +1,19 @@
+<div class="playground-container">
+  <aside class="sidebar" [class.collapsed]="!expanded()">
+        <app-concept-list />
+      </aside>
+
+  <section class="right-section">
+    <div class="preview" [style.height.%]="100 - configHeightPercent">
+      <app-component-preview />
+    </div>
+
+    <!-- Barra para redimensionar desde arriba -->
+    <div class="resizer" [appResizeFromTop]="onResized"></div>
+
+    <!-- Panel de personalización -->
+    <div class="customization" [style.height.%]="configHeightPercent">
+      <app-customization-panel />
+    </div>
+  </section>
+</div>

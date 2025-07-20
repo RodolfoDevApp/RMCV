@@ -1,0 +1,9 @@
+<app-top-header></app-top-header>
+<div class="layout-container">
+  <app-side-header *ngIf="sidebar()" ></app-side-header>
+  <main class="layout-content">
+    <router-outlet />
+  </main>
+</div>
+
+<app-footer></app-footer>

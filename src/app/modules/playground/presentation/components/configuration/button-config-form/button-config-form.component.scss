@@ -1,0 +1,25 @@
+.config-header {
+      margin-bottom: 1rem;
+    }
+    .config-header h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .config-form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      align-items: start;
+    }
+    .slide-group {
+      grid-column: span 2;
+      display: flex;
+      gap: 16px;
+    }
+    @media (max-width: 600px) {
+      .slide-group {
+        grid-column: span 1;
+        flex-wrap: wrap;
+      }
+    }

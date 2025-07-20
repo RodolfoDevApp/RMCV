@@ -1,0 +1,14 @@
+<!-- Botón que abre el modal -->
+
+     <button
+     mat-raised-button
+     color="primary"
+      *ngIf="config()"
+      class="open-modal-btn"
+      (click)="open()"
+      >
+      Abrir Modal
+    </button>
+    
+    <!-- El modal inline, limitado al contenedor -->
+    <app-modal *ngIf="visible()"></app-modal>

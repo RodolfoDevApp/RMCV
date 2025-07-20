@@ -1,0 +1,32 @@
+<form *ngIf="fg() as form" [formGroup]="form" (ngSubmit)="submit()">
+    <div *ngFor="let f of def()?.fields" class="form-row">
+        <label [for]="f.name">{{ f.label }}</label>
+
+        <!-- Inputs -->
+        <ng-container *ngIf="f.type !== 'select'; else selectTpl">
+            <input [type]="f.type" [id]="f.name" [formControlName]="f.name" />
+        </ng-container>
+
+        <!-- Select -->
+        <ng-template #selectTpl>
+            <select [id]="f.name" [formControlName]="f.name" (change)="onSelect(f.name, $any($event.target).value)">
+                <option value="">--</option>
+                <option *ngFor="let opt of opts()[f.name]" [value]="opt.value">
+                    {{ opt.label }}
+                </option>
+            </select>
+        </ng-template>
+
+        <!-- Errors -->
+        <ng-container *ngIf="form.get(f.name)?.invalid && form.get(f.name)?.touched">
+            <ng-container *ngFor="let v of f.validators">
+                <small *ngIf="form.get(f.name)?.hasError(v.type)" class="error-text">
+                    {{ v.message }}
+                </small>
+            </ng-container>
+        </ng-container>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Enviar</button>
+</form>
+<app-modal></app-modal>

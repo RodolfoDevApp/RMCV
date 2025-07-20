@@ -1,0 +1,68 @@
+<!-- ModalComponent template: modal.component.html -->
+
+<!-- Backdrop -->
+<div
+  class="modal-backdrop"
+  *ngIf="isOpen() && cfg().backdrop"
+  [ngStyle]="{ 'background-color': cfg().backdropColor }"
+  (click)="close()"
+></div>
+
+<!-- Box -->
+<div
+  class="modal-box"
+  *ngIf="isOpen()"
+  [ngClass]="[
+    cfg().theme || 'light',
+    cfg().role || 'dialog',
+    cfg().enterAnimation
+  ]"
+  [ngStyle]="{
+    width:         cfg().width,
+    height:        cfg().height,
+    'max-width':   cfg().maxWidth,
+    'max-height':  cfg().maxHeight,
+    'border-radius': cfg().borderRadius,
+    'font-size':   cfg().fontSize,
+    color:         cfg().textColor
+  }"
+  [attr.role]="cfg().role || 'dialog'"
+  [attr.aria-label]="cfg().ariaLabel"
+>
+  <!-- Header -->
+  <header *ngIf="cfg().showHeader" class="modal-header">
+    {{ cfg().headerText }}
+  </header>
+
+  <!-- Body -->
+  <section class="modal-body">
+    <ng-container *ngIf="componentType() !== null; else contentTpl">
+      <ng-container *ngComponentOutlet="componentType()"></ng-container>
+    </ng-container>
+    <ng-template #contentTpl>
+      <div *ngIf="cfg().contentType === 'plainText'">
+        {{ cfg().contentText }}
+      </div>
+      <div *ngIf="cfg().contentType === 'html'" [innerHTML]="cfg().contentHtml"></div>
+      <div *ngIf="cfg().contentType === 'markdown'">
+        {{ cfg().contentMarkdown }}
+      </div>
+      <ul *ngIf="cfg().contentType === 'list'">
+        <li *ngFor="let i of cfg().listItems">{{ i }}</li>
+      </ul>
+      <img *ngIf="cfg().contentType === 'image'" [src]="cfg().imageUrl" />
+    </ng-template>
+  </section>
+
+  <!-- Footer -->
+  <footer *ngIf="cfg().showFooter" class="modal-footer">
+    <button
+      *ngFor="let act of cfg().actions"
+      class="modal-action"
+      [ngClass]="act.role"
+      (click)="close()"
+    >
+      {{ act.label }}
+    </button>
+  </footer>
+</div>

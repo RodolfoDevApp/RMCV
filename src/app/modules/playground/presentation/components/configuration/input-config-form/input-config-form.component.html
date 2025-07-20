@@ -1,0 +1,32 @@
+<div class="config-header"><h3>Editar Input</h3></div>
+    <form *ngIf="form" [formGroup]="form" class="config-form">
+      <mat-form-field appearance="outline">
+        <mat-label>Placeholder</mat-label>
+        <input matInput formControlName="placeholder" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="type">
+          <mat-option value="text">Texto</mat-option>
+          <mat-option value="password">Password</mat-option>
+          <mat-option value="email">Email</mat-option>
+          <mat-option value="number">Número</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Icono prefijo</mat-label>
+        <input matInput formControlName="prefixIcon" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Icono sufijo</mat-label>
+        <input matInput formControlName="suffixIcon" />
+      </mat-form-field>
+
+      <div class="slide-group">
+        <mat-slide-toggle formControlName="disabled">Deshabilitado</mat-slide-toggle>
+        <mat-slide-toggle formControlName="fullWidth">Ancho completo</mat-slide-toggle>
+      </div>
+    </form>

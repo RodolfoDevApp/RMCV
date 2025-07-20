@@ -1,0 +1,14 @@
+<ng-container *ngIf="config() as cfg">
+  <mat-card [ngClass]="'mat-elevation-z' + cfg.elevation">
+    <mat-card-header>
+      <mat-card-title>{{ cfg.title }}</mat-card-title>
+      <mat-card-subtitle *ngIf="cfg.subtitle">{{ cfg.subtitle }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <img *ngIf="cfg.imageUrl" mat-card-image class="card-image" [src]="cfg.imageUrl" alt="" />
+
+    <mat-card-content>
+      <p>{{ cfg.content }}</p>
+    </mat-card-content>
+  </mat-card>
+</ng-container>

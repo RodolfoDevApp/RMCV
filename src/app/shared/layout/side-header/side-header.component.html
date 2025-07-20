@@ -1,0 +1,27 @@
+<div class="sidebar-backdrop" (click)="closeSidebar()"></div>
+
+<aside class="sidebar-content">
+  <button mat-icon-button class="close-button" (click)="closeSidebar()" aria-label="Cerrar menú">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <nav class="sidebar-nav">
+  <a mat-button routerLink="/" (click)="closeSidebar()" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    <mat-icon>home</mat-icon>
+    <span>Inicio</span>
+  </a>
+  <a mat-button routerLink="/playground" (click)="closeSidebar()" routerLinkActive="active">
+    <mat-icon>construction</mat-icon>
+    <span>Playground</span>
+  </a>
+  <a mat-button routerLink="/skills" (click)="closeSidebar()" routerLinkActive="active">
+    <mat-icon>school</mat-icon>
+    <span>Skills</span>
+  </a>
+  <a mat-button routerLink="/patterns" (click)="closeSidebar()" routerLinkActive="active">
+    <mat-icon>extension</mat-icon>
+    <span>Patrones</span>
+  </a>
+</nav>
+
+</aside>

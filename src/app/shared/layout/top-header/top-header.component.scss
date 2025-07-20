@@ -1,0 +1,71 @@
+
+:host {
+  display: block;
+  height: 64px; // Altura fija del header
+}
+.header-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .toggle-button {
+    display: none;
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    gap: 1rem;
+
+    a {
+      position: relative;
+      color: white;
+      font-weight: 500;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &.active {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+
+        // animación de subrayado
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 10%;
+          width: 80%;
+          height: 2px;
+          background-color: white;
+          transition: width 0.3s ease;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+    }
+  }
+
+  // Media Query para ocultar los links y mostrar el botón en tablet/móvil
+  @media screen and (max-width: 1023px) {
+    .toggle-button {
+      display: inline-flex;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .title {
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+<h3>Configurar Formulario Dinámico</h3>
+<form *ngIf="form" [formGroup]="form" class="config-form">
+
+    <div formArrayName="fields">
+        <div *ngFor="let fg of fields.controls; let i=index" [formGroupName]="i" class="field-group">
+
+            <header>
+                <strong>Campo {{ i + 1 }}</strong>
+                <button type="button" (click)="removeField(i)">Eliminar</button>
+            </header>
+
+            <label><span>Nombre</span>
+                <input formControlName="name" />
+            </label>
+            <label><span>Etiqueta</span>
+                <input formControlName="label" />
+            </label>
+            <label><span>Tipo</span>
+                <select formControlName="type">
+                    <option value="text">Text</option>
+                    <option value="email">Email</option>
+                    <option value="number">Number</option>
+                    <option value="select">Select</option>
+                </select>
+            </label>
+            <label class="checkbox-label">
+                <input type="checkbox" formControlName="required" />
+                <span>Requerido</span>
+            </label>
+
+            <div formArrayName="validators" class="validators">
+                <strong>Validaciones:</strong>
+                <div *ngFor="let vCtrl of getValidators(i).controls; let j=index" [formGroupName]="j" class="validator">
+                    <select formControlName="type">
+                        <option value="required">Required</option>
+                        <option value="email">Email</option>
+                        <option value="numeric">Numeric</option>
+                    </select>
+                    <input formControlName="message" placeholder="Mensaje de error" />
+                    <button type="button" (click)="removeValidator(i,j)">–</button>
+                </div>
+                <button type="button" (click)="addValidator(i)">+ Añadir validación</button>
+            </div>
+
+            <label *ngIf="fg.value.type==='select'"><span>Endpoint Opciones</span>
+                <select formControlName="optionsEndpoint">
+                    <option value="countries">countries</option>
+                    <option value="states">states</option>
+                    <option value="cities">cities</option>
+                </select>
+            </label>
+        </div>
+    </div>
+
+    <button type="button" (click)="addField()">+ Añadir Campo</button>
+</form>

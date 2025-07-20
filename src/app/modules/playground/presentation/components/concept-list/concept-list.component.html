@@ -1,0 +1,30 @@
+<div class="sidebar" [class.collapsed]="!expanded()">
+  <div class="sidebar-controls desktop-only">
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon>{{ expanded() ? 'chevron_left' : 'chevron_right' }}</mat-icon>
+    </button>
+    <button mat-icon-button (click)="toggleAllGroups()" *ngIf="expanded()">
+      <mat-icon>{{ allExpanded() ? 'unfold_less' : 'unfold_more' }}</mat-icon>
+    </button>
+  </div>
+
+
+  <ng-container *ngFor="let group of groups()">
+    <div class="group">
+      <div class="group-title" (click)="toggleGroup(group.id)">
+        <mat-icon>{{ group.icon }}</mat-icon>
+        <span *ngIf="expanded()">{{ group.name }}</span>
+        <mat-icon *ngIf="expanded()" class="toggle-icon">
+          {{ groupStates()[group.id] ? 'expand_less' : 'expand_more' }}
+        </mat-icon>
+      </div>
+
+      <ul *ngIf="expanded() && groupStates()[group.id]">
+        <li *ngFor="let item of group.items" (click)="select(item)" [class.active]="selected()?.id === item.id">
+          <mat-icon>{{ item.icon }}</mat-icon>
+          <span>{{ item.name }}</span>
+        </li>
+      </ul>
+    </div>
+  </ng-container>
+</div>

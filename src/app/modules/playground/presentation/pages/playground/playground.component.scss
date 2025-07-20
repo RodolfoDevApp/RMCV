@@ -1,0 +1,38 @@
+.playground-container {
+  display: flex;
+  height: calc(100vh - 112px - 48px);
+}
+
+ .sidebar {
+      transition: width 0.3s;
+      height: 100%;
+
+    }
+    .sidebar.collapsed {
+      width: 64px;
+    }
+
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.preview {
+  background: white;
+  overflow: auto;
+  border-bottom: 1px solid #ccc;
+}
+
+.customization {
+  background: #f0f0f0;
+  overflow: auto;
+}
+
+.resizer {
+  height: 6px;
+  cursor: ns-resize;
+  background: #ccc;
+  z-index: 10;
+}

@@ -1,0 +1,24 @@
+ <ng-container *ngIf="config() as conf">
+      <button
+        *ngIf="!conf.outline; else outlined"
+        mat-raised-button
+        [color]="conf.color"
+        [disabled]="conf.disabled"
+        [matTooltip]="conf.tooltip ?? ''"
+      >
+        <mat-icon *ngIf="conf.icon">{{ conf.icon }}</mat-icon>
+        <span>{{ conf.label }}</span>
+      </button>
+
+      <ng-template #outlined>
+        <button
+          mat-stroked-button
+          [color]="conf.color"
+          [disabled]="conf.disabled"
+          [matTooltip]="conf.tooltip ?? ''"
+        >
+          <mat-icon *ngIf="conf.icon">{{ conf.icon }}</mat-icon>
+          <span>{{ conf.label }}</span>
+        </button>
+      </ng-template>
+    </ng-container>

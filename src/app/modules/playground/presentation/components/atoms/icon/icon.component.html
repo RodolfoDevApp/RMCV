@@ -1,0 +1,13 @@
+<ng-container *ngIf="cfg() as c">
+      <mat-icon
+        *ngIf="c.icon"
+        [style.fontSize.px]="c.size"
+        [style.width.px]="c.size"
+        [style.height.px]="c.size"
+        [style.lineHeight.px]="c.size"
+        [style.color]="c.color"
+        [class.spin]="c.spin"
+      >
+        {{ c.icon }}
+      </mat-icon>
+    </ng-container>

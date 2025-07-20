@@ -1,0 +1,7 @@
+<ng-container *ngIf="config() as cfg">
+    <mat-form-field appearance="outline">
+        <mat-icon matPrefix *ngIf="cfg.prefixIcon">{{ cfg.prefixIcon }}</mat-icon>
+        <input matInput [type]="cfg.type" [placeholder]="cfg.placeholder" [disabled]="cfg.disabled" />
+        <mat-icon matSuffix *ngIf="cfg.suffixIcon">{{ cfg.suffixIcon }}</mat-icon>
+    </mat-form-field>
+</ng-container>

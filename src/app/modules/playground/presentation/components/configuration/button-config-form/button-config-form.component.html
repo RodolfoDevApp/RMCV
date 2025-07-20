@@ -1,0 +1,46 @@
+<div class="config-header">
+      <h3>Editar Botón</h3>
+    </div>
+
+    <form *ngIf="form" [formGroup]="form" class="config-form">
+      <mat-form-field appearance="outline">
+        <mat-label>Texto</mat-label>
+        <input matInput formControlName="label" />
+        <mat-icon matSuffix>edit</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Color</mat-label>
+        <mat-select formControlName="color">
+          <mat-option value="primary">Primario</mat-option>
+          <mat-option value="accent">Acento</mat-option>
+          <mat-option value="warn">Advertencia</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Icono</mat-label>
+        <input matInput formControlName="icon" />
+        <mat-icon matSuffix>image</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Posición</mat-label>
+        <mat-select formControlName="iconPosition">
+          <mat-option value="start">Inicio</mat-option>
+          <mat-option value="end">Fin</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Tooltip</mat-label>
+        <input matInput formControlName="tooltip" />
+        <mat-icon matSuffix>info</mat-icon>
+      </mat-form-field>
+
+      <div class="slide-group">
+        <mat-slide-toggle formControlName="outline">Outline</mat-slide-toggle>
+        <mat-slide-toggle formControlName="fullWidth">Ancho completo</mat-slide-toggle>
+        <mat-slide-toggle formControlName="disabled">Deshabilitado</mat-slide-toggle>
+      </div>
+    </form>

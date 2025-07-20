@@ -1,0 +1,20 @@
+<div class="config-header">
+    <h3>Editar Tarjeta</h3>
+</div>
+<form *ngIf="form" [formGroup]="form" class="config-form">
+    <mat-form-field appearance="outline"><mat-label>Título</mat-label><input matInput
+            formControlName="title" /></mat-form-field>
+    <mat-form-field appearance="outline"><mat-label>Subtítulo</mat-label><input matInput
+            formControlName="subtitle" /></mat-form-field>
+    <mat-form-field appearance="outline"><mat-label>Contenido</mat-label><input matInput
+            formControlName="content" /></mat-form-field>
+    <mat-form-field appearance="outline"><mat-label>URL Imagen</mat-label><input matInput
+            formControlName="imageUrl" /></mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Elevación</mat-label>
+        <mat-select formControlName="elevation">
+            <mat-option *ngFor="let e of elevations" [value]="e">{{ e }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-slide-toggle formControlName="fullWidth">Ancho completo</mat-slide-toggle>
+</form>

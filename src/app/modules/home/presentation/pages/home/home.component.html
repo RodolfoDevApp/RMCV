@@ -1,0 +1,24 @@
+<div class="home-container">
+  <!-- Banner principal -->
+  <section class="hero-banner">
+    <div class="overlay-content">
+      <h1>Desarrollo fullstack</h1>
+      <p></p>
+    </div>
+  </section>
+
+  <!-- Habilidades (6 bullets en 2 filas de 3) -->
+  <section class="skills-grid">
+    <div class="skill-card" *ngFor="let skill of skills">
+      <div class="icon"></div>
+      <span>{{ skill.label }}</span>
+    </div>
+  </section>
+
+  <!-- Imagen inferior -->
+  <section class="bottom-banner">
+    <div class="overlay-content">
+      <h2>Diseño modular y reutilizable</h2>
+    </div>
+  </section>
+</div>

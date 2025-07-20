@@ -1,0 +1,20 @@
+.config-header h3 {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+}
+
+.config-form {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media(max-width:600px) {
+    .config-form {
+        grid-template-columns: 1fr
+    }
+}
+
+mat-slide-toggle {
+    grid-column: span 2
+}

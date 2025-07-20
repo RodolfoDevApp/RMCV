@@ -1,0 +1,4 @@
+<div class="panel" *ngIf="component() as cf">
+  <ng-container *ngComponentOutlet="cf"></ng-container>
+</div>
+<div class="placeholder" *ngIf="!component()">Selecciona un componente para configurar</div>

@@ -1,0 +1,6 @@
+<div *ngIf="component() as cmp" class="preview-container">
+  <ng-container *ngComponentOutlet="cmp"></ng-container>
+</div>
+<div *ngIf="!component()" class="placeholder">
+  Selecciona un componente del sidebar
+</div>

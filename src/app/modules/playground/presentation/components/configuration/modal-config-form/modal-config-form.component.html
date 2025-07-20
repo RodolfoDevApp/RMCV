@@ -1,0 +1,125 @@
+<h3>Configurar Modal</h3>
+<form *ngIf="form" [formGroup]="form" class="config-form">
+  <label><span>Width</span><input formControlName="width" /></label>
+  <label><span>Height</span><input formControlName="height" /></label>
+  <label><span>Max Width</span><input formControlName="maxWidth" /></label>
+  <label><span>Max Height</span><input formControlName="maxHeight" /></label>
+
+  <label><span>Vertical Align</span>
+    <select formControlName="verticalAlign">
+      <option value="top">Top</option>
+      <option value="center">Center</option>
+      <option value="bottom">Bottom</option>
+    </select>
+  </label>
+
+  <label class="checkbox-label">
+    <input type="checkbox" formControlName="backdrop" />
+    <span>Backdrop</span>
+  </label>
+  <label><span>Backdrop Color</span><input formControlName="backdropColor" /></label>
+
+  <label class="checkbox-label">
+    <input type="checkbox" formControlName="closeOnBackdropClick" />
+    <span>Close on Click Outside</span>
+  </label>
+  <label class="checkbox-label">
+    <input type="checkbox" formControlName="closeOnEscape" />
+    <span>Close on Esc</span>
+  </label>
+
+  <label class="checkbox-label">
+    <input type="checkbox" formControlName="showHeader" />
+    <span>Show Header</span>
+  </label>
+  <label><span>Header Text</span><input formControlName="headerText" /></label>
+
+  <label class="checkbox-label">
+    <input type="checkbox" formControlName="showFooter" />
+    <span>Show Footer</span>
+  </label>
+  <label><span>Actions (JSON)</span><input formControlName="actions" /></label>
+
+  <label><span>Enter Animation</span>
+    <select formControlName="enterAnimation">
+      <option value="fade">Fade</option>
+      <option value="slide">Slide</option>
+    </select>
+  </label>
+  <label><span>Exit Animation</span>
+    <select formControlName="exitAnimation">
+      <option value="fade">Fade</option>
+      <option value="slide">Slide</option>
+    </select>
+  </label>
+
+  <label><span>Theme</span>
+    <select formControlName="theme">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  </label>
+  <label><span>Border Radius</span><input formControlName="borderRadius" /></label>
+
+  <label><span>Aria Label</span><input formControlName="ariaLabel" /></label>
+  <label><span>Role</span>
+    <select formControlName="role">
+      <option value="dialog">dialog</option>
+      <option value="alertdialog">alertdialog</option>
+    </select>
+  </label>
+
+  <label><span>Content Type</span>
+    <select formControlName="contentType">
+      <option value="plainText">Plain Text</option>
+      <option value="html">HTML</option>
+      <option value="markdown">Markdown</option>
+      <option value="list">List</option>
+      <option value="image">Image</option>
+    </select>
+  </label>
+
+  <label *ngIf="form.value.contentType==='plainText'">
+    <span>Text</span>
+    <textarea formControlName="contentText"></textarea>
+  </label>
+  <label *ngIf="form.value.contentType==='html'">
+    <span>HTML</span>
+    <textarea formControlName="contentHtml"></textarea>
+  </label>
+  <label *ngIf="form.value.contentType==='markdown'">
+    <span>Markdown</span>
+    <textarea formControlName="contentMarkdown"></textarea>
+  </label>
+  <label *ngIf="form.value.contentType==='list'">
+    <span>List Items (comma‑separated)</span>
+    <input formControlName="listItems" />
+  </label>
+  <label *ngIf="form.value.contentType==='image'">
+    <span>Image URL</span>
+    <input formControlName="imageUrl" />
+  </label>
+
+  <label><span>Content Padding</span>
+    <select formControlName="contentPadding">
+      <option value="small">Small</option>
+      <option value="normal">Normal</option>
+      <option value="large">Large</option>
+    </select>
+  </label>
+  <label><span>Content Alignment</span>
+    <select formControlName="contentAlignment">
+      <option value="left">Left</option>
+      <option value="center">Center</option>
+      <option value="right">Right</option>
+    </select>
+  </label>
+  <label class="checkbox-label">
+    <input type="checkbox" formControlName="scrollable" />
+    <span>Scrollable</span>
+  </label>
+
+  <label><span>Font Size</span><input formControlName="fontSize" /></label>
+  <label><span>Line Height</span><input formControlName="lineHeight" /></label>
+  <label><span>Text Color</span><input formControlName="textColor" /></label>
+</form>

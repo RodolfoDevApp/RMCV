@@ -1,0 +1,10 @@
+<button
+      *ngIf="hasSelection()"
+      class="fab mobile-only config-fab"
+      mat-fab
+      color="accent"
+      (click)="openConfig()"
+    >
+      <mat-icon>settings</mat-icon>
+    </button>
+    <app-modal></app-modal>

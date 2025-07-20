@@ -1,0 +1,17 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <!-- Botón hamburguesa (solo en móvil/tablet) -->
+  <button mat-icon-button class="toggle-button" (click)="toggleSidebar()" aria-label="Abrir menú lateral">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <!-- Título -->
+  <span class="title">CV Interactivo</span>
+
+  <!-- Navegación (solo en escritorio) -->
+  <div class="nav-links">
+    <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+    <a mat-button routerLink="/playground" routerLinkActive="active">Playground</a>
+    <a mat-button routerLink="/skills" routerLinkActive="active">Skills</a>
+    <a mat-button routerLink="/patterns" routerLinkActive="active">Patrones</a>
+  </div>
+</mat-toolbar>
