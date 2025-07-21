@@ -1,4 +1,4 @@
-<div class="sidebar-backdrop" (click)="closeSidebar()"></div>
+<div class="sidebar-backdrop mobile-only" (click)="closeSidebar()"></div>
 
 <aside class="sidebar-content">
   <button mat-icon-button class="close-button" (click)="closeSidebar()" aria-label="Cerrar menú">
@@ -12,16 +12,20 @@
   </a>
   <a mat-button routerLink="/playground" (click)="closeSidebar()" routerLinkActive="active">
     <mat-icon>construction</mat-icon>
-    <span>Playground</span>
+    <span>Área de pruebas</span>
   </a>
+  <!-- <a mat-button routerLink="/about" (click)="closeSidebar()" routerLinkActive="active">
+    <mat-icon>Sobre mí”</mat-icon>
+    <span></span>
+  </a> -->
   <a mat-button routerLink="/skills" (click)="closeSidebar()" routerLinkActive="active">
     <mat-icon>school</mat-icon>
-    <span>Skills</span>
+    <span>Conocimientos técnicos</span>
   </a>
-  <a mat-button routerLink="/patterns" (click)="closeSidebar()" routerLinkActive="active">
+  <!-- <a mat-button routerLink="/patterns" (click)="closeSidebar()" routerLinkActive="active">
     <mat-icon>extension</mat-icon>
     <span>Patrones</span>
-  </a>
+  </a> -->
 </nav>
 
 </aside>

@@ -3,11 +3,12 @@ import { PlaygroundState } from '../../../../../application/state/playground.sta
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from '../modal.component';
 import { MatButtonModule } from '@angular/material/button';
+import { ModalConfig } from '../../../../../domain/models/configurations/modal-config.model';
 
 @Component({
   selector: 'app-modal-launcher',
   standalone: true,
-  imports: [CommonModule,MatButtonModule, ModalComponent],
+  imports: [CommonModule,MatButtonModule],
   templateUrl: './modal-launcher.component.html',
   styleUrl: './modal-launcher.component.scss',
   host: {
@@ -15,19 +16,15 @@ import { MatButtonModule } from '@angular/material/button';
   },
 })
 export class ModalLauncherComponent {
-  private state = inject(PlaygroundState);
+  private ps = inject(PlaygroundState);
 
-  /** Visible cuando modalVisible === true */
-  visible = computed(() => this.state.modalVisible());
+  // Exponemos la señal de configuración como un computed
+  config = computed(() => this.ps.modalConfig());
 
-  /** Sólo mostramos el botón si ya cargamos config */
-  config  = computed(() => this.state.modalConfig());
-
-  /** Abre el modal, cargando config si es necesario */
-  open() {
-    if (!this.config()) {
-      this.state.loadModalConfig();
-    }
-    this.state.showModal();
+  openPreview() {
+    this.ps.loadModalConfig();                // carga (asíncrona o mock)
+    const cfg = this.ps.modalConfig()!;       // lee el valor actual
+    this.ps.openPreviewModal(cfg);            // dispara el modal
   }
+  
 }

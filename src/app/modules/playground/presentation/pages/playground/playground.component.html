@@ -1,8 +1,9 @@
 <div class="playground-container">
-  <aside class="sidebar" [class.collapsed]="!expanded()">
-        <app-concept-list />
-      </aside>
-
+  <aside class="sidebar desktop-only" [class.collapsed]="!expanded()">
+    <app-concept-list />
+  </aside>
+<app-sidebar-launcher></app-sidebar-launcher>
+<app-config-launcher></app-config-launcher>
   <section class="right-section">
     <div class="preview" [style.height.%]="100 - configHeightPercent">
       <app-component-preview />
@@ -12,7 +13,7 @@
     <div class="resizer" [appResizeFromTop]="onResized"></div>
 
     <!-- Panel de personalización -->
-    <div class="customization" [style.height.%]="configHeightPercent">
+    <div class="customization desktop-only" [style.height.%]="configHeightPercent">
       <app-customization-panel />
     </div>
   </section>

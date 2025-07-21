@@ -1,5 +1,5 @@
 import { CommonModule, NgComponentOutlet } from '@angular/common';
-import { Component, computed, HostListener, inject, Type } from '@angular/core';
+import { Component, computed, HostListener, inject, Input, Type } from '@angular/core';
 import { PlaygroundState } from '../../../../application/state/playground.state';
 import { ModalConfig } from '../../../../domain/models/configurations/modal-config.model';
 
@@ -11,20 +11,17 @@ import { ModalConfig } from '../../../../domain/models/configurations/modal-conf
   styleUrl: './modal.component.scss'
 })
 export class ModalComponent {
-   private state = inject(PlaygroundState);
-
-  isOpen       = computed(() => this.state.modalVisible());
-  cfg          = computed<ModalConfig>(() => this.state.modalConfig()!);
-  componentType = computed<Type<any> | null>(() => this.cfg()?.component ?? null);
+   @Input() config!: ModalConfig;
+  @Input() visible!: boolean;
+private ps = inject(PlaygroundState);
+  close() {
+    this.ps.closePreviewModal()
+  }
 
   @HostListener('window:keydown.escape')
   onEscape() {
-    if (this.isOpen() && this.cfg()?.closeOnEscape) {
-      this.close();
+    if (this.visible && this.config.closeOnEscape) {
+      this.ps.closePreviewModal();
     }
-  }
-
-  close() {
-    this.state.hideModal();
   }
 }

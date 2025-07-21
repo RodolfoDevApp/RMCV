@@ -1,68 +1,34 @@
-<!-- ModalComponent template: modal.component.html -->
-
-<!-- Backdrop -->
-<div
-  class="modal-backdrop"
-  *ngIf="isOpen() && cfg().backdrop"
-  [ngStyle]="{ 'background-color': cfg().backdropColor }"
-  (click)="close()"
-></div>
-
-<!-- Box -->
-<div
-  class="modal-box"
-  *ngIf="isOpen()"
-  [ngClass]="[
-    cfg().theme || 'light',
-    cfg().role || 'dialog',
-    cfg().enterAnimation
-  ]"
-  [ngStyle]="{
-    width:         cfg().width,
-    height:        cfg().height,
-    'max-width':   cfg().maxWidth,
-    'max-height':  cfg().maxHeight,
-    'border-radius': cfg().borderRadius,
-    'font-size':   cfg().fontSize,
-    color:         cfg().textColor
-  }"
-  [attr.role]="cfg().role || 'dialog'"
-  [attr.aria-label]="cfg().ariaLabel"
->
-  <!-- Header -->
-  <header *ngIf="cfg().showHeader" class="modal-header">
-    {{ cfg().headerText }}
-  </header>
-
-  <!-- Body -->
-  <section class="modal-body">
-    <ng-container *ngIf="componentType() !== null; else contentTpl">
-      <ng-container *ngComponentOutlet="componentType()"></ng-container>
-    </ng-container>
-    <ng-template #contentTpl>
-      <div *ngIf="cfg().contentType === 'plainText'">
-        {{ cfg().contentText }}
-      </div>
-      <div *ngIf="cfg().contentType === 'html'" [innerHTML]="cfg().contentHtml"></div>
-      <div *ngIf="cfg().contentType === 'markdown'">
-        {{ cfg().contentMarkdown }}
-      </div>
-      <ul *ngIf="cfg().contentType === 'list'">
-        <li *ngFor="let i of cfg().listItems">{{ i }}</li>
-      </ul>
-      <img *ngIf="cfg().contentType === 'image'" [src]="cfg().imageUrl" />
-    </ng-template>
-  </section>
-
-  <!-- Footer -->
-  <footer *ngIf="cfg().showFooter" class="modal-footer">
-    <button
-      *ngFor="let act of cfg().actions"
-      class="modal-action"
-      [ngClass]="act.role"
-      (click)="close()"
-    >
-      {{ act.label }}
-    </button>
-  </footer>
-</div>
+<ng-container style="padding: 10px;" *ngIf="visible && config">
+  <div class="backdrop" [ngStyle]="{ 'background-color': config.backdropColor }" (click)="close()"></div>
+  <div class="box" [ngClass]="[ config.theme, config.enterAnimation ]" [ngStyle]="{
+             width:config.width,
+             height:config.height,
+             'max-width':config.maxWidth,
+             'max-height':config.maxHeight,
+             'border-radius':config.borderRadius,
+             'font-size':config.fontSize,
+             color:config.textColor
+           }" [attr.role]="config.role" [attr.aria-label]="config.ariaLabel">
+    <header *ngIf="config.showHeader">{{ config.headerText }}</header>
+    <section class="body">
+      <ng-container *ngIf="config.component; else textTpl">
+        <ng-container *ngComponentOutlet="config.component"></ng-container>
+      </ng-container>
+      <ng-template #textTpl>
+        <div *ngIf="config.contentType==='plainText'">
+          {{ config.contentText }}
+        </div>
+        <div *ngIf="config.contentType==='html'" [innerHTML]="config.contentHtml"></div>
+        <ul *ngIf="config.contentType==='list'">
+          <li *ngFor="let i of config.listItems">{{ i }}</li>
+        </ul>
+        <img *ngIf="config.contentType==='image'" [src]="config.imageUrl" />
+      </ng-template>
+    </section>
+    <footer *ngIf="config.showFooter" class="footer">
+      <button *ngFor="let a of config.actions" [ngClass]="a.role" (click)="close()">
+        {{ a.label }}
+      </button>
+    </footer>
+  </div>
+</ng-container>

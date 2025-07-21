@@ -3,12 +3,10 @@
      <button
      mat-raised-button
      color="primary"
-      *ngIf="config()"
+     *ngIf="config()"
       class="open-modal-btn"
-      (click)="open()"
+      (click)="openPreview()"
       >
       Abrir Modal
     </button>
     
-    <!-- El modal inline, limitado al contenedor -->
-    <app-modal *ngIf="visible()"></app-modal>

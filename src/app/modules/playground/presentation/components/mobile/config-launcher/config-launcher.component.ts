@@ -15,16 +15,13 @@ import { ModalComponent } from '../../organism/modal/modal.component';
 })
 export class ConfigLauncherComponent {
   private state = inject(PlaygroundState);
-  configOpen = false;
-
   hasSelection = computed(() => !!this.state.selectedConcept());
 
-  private get configModalConfig(): Partial<ModalConfig> {
-    const cfg = this.state.currentModalConfig() || {};
+  openConfig() {
     const componentMap: Record<string, any> = CONFIG_FORM_MAP;
     const comp = componentMap[this.state.selectedConcept()?.id || ''] ?? null;
 
-    return {
+    const cfg: ModalConfig =  {
       width: '100vw', height: '100vh',
       maxWidth: '100vw', maxHeight: '100vh',
       backdrop: true, backdropColor: 'rgba(0,0,0,0.5)',
@@ -36,20 +33,10 @@ export class ConfigLauncherComponent {
       ariaLabel: 'Configuración de componente', role: 'dialog',
       component: comp,
       contentPadding: 'normal', contentAlignment: 'left',
-      scrollable: true, fontSize: '1rem', lineHeight: '1.5', textColor: '#333'
+      scrollable: true, fontSize: '1rem', lineHeight: '1.5', textColor: '#333',
+      verticalAlign: 'center',
+      contentType: 'component'
     };
-  }
-
-  openConfig() {
-     if (this.configOpen) {
-      this.state.hideModal();
-      this.configOpen = false;
-    } else {
-      // cerrar sidebar si estuviera abierto
-      this.state.hideModal();
-      this.configOpen = true;
-      this.state.updateModalConfig(this.configModalConfig);
-      this.state.showModal();
-    }
+    this.state.openGlobalModal(cfg);
   }
 }

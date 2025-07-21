@@ -1,5 +1,11 @@
 <div *ngIf="component() as cmp" class="preview-container">
   <ng-container *ngComponentOutlet="cmp"></ng-container>
+  <app-modal
+    *ngIf="state.modalVisible()"
+    [config]="state.modalConfig()!"
+    [visible]="state.modalVisible()"
+    (visibleChange)="state.closePreviewModal()"
+  ></app-modal>
 </div>
 <div *ngIf="!component()" class="placeholder">
   Selecciona un componente del sidebar

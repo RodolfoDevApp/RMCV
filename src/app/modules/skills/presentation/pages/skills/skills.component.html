@@ -1,8 +1,17 @@
-<h2>Mis Habilidades</h2>
+<!-- skills.component.html -->
+<h2 class="section-title mat-h2">Mis Habilidades</h2>
 
-<nav>
-  <a routerLink="frontend" routerLinkActive="active">Frontend</a>
-  <a routerLink="backend" routerLinkActive="active">Backend</a>
+<nav mat-tab-nav-bar backgroundColor="primary">
+  <a
+    mat-tab-link
+    *ngFor="let link of navLinks"
+    [routerLink]="link.path"
+    routerLinkActive
+    #rla="routerLinkActive"
+    [active]="rla.isActive"
+  >
+    {{ link.label }}
+  </a>
 </nav>
 
-<router-outlet></router-outlet> <!-- ✅ -->
+<router-outlet style="display: flex; justify-content: center; padding: 0;margin: 0;box-sizing: border-box;"></router-outlet>

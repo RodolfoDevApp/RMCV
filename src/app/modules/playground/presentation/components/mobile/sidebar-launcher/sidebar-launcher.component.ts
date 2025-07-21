@@ -15,13 +15,14 @@ import { ConceptListComponent } from '../../concept-list/concept-list.component'
   styleUrl: './sidebar-launcher.component.scss'
 })
 export class SidebarLauncherComponent {
+  
   open = false;
-  private state = inject(PlaygroundState);
-  hasSelection = computed(() => !!this.state.selectedConcept());
+  private ps = inject(PlaygroundState);
+  hasSelection = computed(() => !!this.ps.selectedConcept());
 
-  private get configModalConfig(): Partial<ModalConfig> {
-    return {
-      width: '50vw', height: '100vh',
+   openGlobal() {
+    const cfg: ModalConfig = {
+      width: '100vw', height: '100vh',
       maxWidth: '100vw', maxHeight: '100vh',
       backdrop: true, backdropColor: 'rgba(0,0,0,0.5)',
       closeOnBackdropClick: true, closeOnEscape: true,
@@ -32,20 +33,12 @@ export class SidebarLauncherComponent {
       ariaLabel: 'Menú de conceptos', role: 'dialog',
       component: ConceptListComponent,
       contentPadding: 'normal', contentAlignment: 'left',
-      scrollable: true, fontSize: '1rem', lineHeight: '1.5', textColor: '#333'
+      scrollable: true, fontSize: '1rem', lineHeight: '1.5', textColor: '#333',
+      verticalAlign: 'center',
+      contentType: 'component'
     };
+    this.ps.openGlobalModal(cfg);
   }
 
-  toggleMenu() {
-    if (this.open) {
-      this.state.hideModal();
-      this.open = false;
-    } else {
-      // cerrar sidebar si estuviera abierto
-      this.state.hideModal();
-      this.open = true;
-      this.state.updateModalConfig(this.configModalConfig);
-      this.state.showModal();
-    }
-  }
+  
 }

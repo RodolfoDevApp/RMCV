@@ -22,7 +22,7 @@ export class ConceptApiService {
         name: 'Moléculas',
         icon: 'widgets',
         items: [
-          { id: 'form', name: 'Formulario Login', icon: 'login' },
+          { id: 'form', name: 'Formulario', icon: 'assignment' },
           { id: 'card', name: 'Tarjeta Producto', icon: 'shopping_bag' },
         ],
       },

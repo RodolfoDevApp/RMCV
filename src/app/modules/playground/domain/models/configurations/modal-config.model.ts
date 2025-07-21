@@ -45,7 +45,7 @@ export interface ModalConfig {
   role:      'dialog' | 'alertdialog';
 
   // 10. Contenido
-  contentType: 'plainText' | 'html' | 'markdown' | 'list' | 'image';
+  contentType: 'plainText' | 'html' | 'markdown' | 'list' | 'image' | 'component';
   contentText?:     string;
   contentHtml?:     string;
   contentMarkdown?: string;

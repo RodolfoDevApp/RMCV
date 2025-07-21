@@ -38,6 +38,7 @@ export const routes: Routes = [
           import('./modules/skills/presentation/pages/skills/skills.component')
             .then(m => m.SkillsComponent),
         children: [
+          { path: '', redirectTo: 'frontend', pathMatch: 'full' },
           {
             path: 'frontend',
             loadComponent: () =>

@@ -34,17 +34,24 @@ export class PlaygroundState {
   private loadIconConfigUseCase = new LoadIconConfigUseCase();
   readonly cardConfig = signal<CardConfig | null>(null);
   private loadCardConfigUseCase = new LoadCardConfigUseCase();
-  readonly modalConfig = signal<ModalConfig | null>(null);
-  private loadModalCfg = new LoadModalConfigUseCase();
-  readonly modalVisible = signal(false);
+  // readonly modalConfig = signal<ModalConfig | null>(null);
+  // readonly modalVisible = signal(false);
   readonly formConfig = signal<FormConfig | null>(null);
   readonly formGroup = signal<FormGroup | null>(null);
   readonly options = signal<Record<string, Option[]>>({});
-
   private loadFormDef = new LoadFormDefinitionUseCase();
   private loadCountries = new LoadCountriesUseCase();
   private loadStates = new LoadStatesUseCase();
   private loadCities = new LoadCitiesUseCase();
+  // Modal global (menú/config)
+  readonly globalModalConfig  = signal<ModalConfig | null>(null);
+  readonly globalModalVisible = signal(false);
+  
+  // Modal local de preview
+  private loadModalCfg = new LoadModalConfigUseCase();
+  readonly modalConfig  = signal<ModalConfig | null>(null);
+  readonly modalVisible = signal(false);
+
 
   loadConceptGroups() {
     this.loadConceptGroupsUseCase.execute().subscribe(groups => {
@@ -176,6 +183,30 @@ export class PlaygroundState {
     });
 
     this.formGroup.set(new FormGroup(groupControls));
+  }
+
+  // Acciones para el modal global
+  openGlobalModal(cfg: ModalConfig) {
+    if (!this.globalModalVisible()) {
+      this.globalModalConfig.set(cfg);
+      this.globalModalVisible.set(true);
+    }else this.closeGlobalModal();
+  }
+  closeGlobalModal() {
+    this.globalModalVisible.set(false);
+  }
+
+  // Acciones para el modal de preview
+  openPreviewModal(cfg: ModalConfig) {
+    if (!this.modalVisible()) {
+      this.modalConfig.set(cfg);
+      this.modalVisible.set(true);
+    }else{
+      this.closePreviewModal();
+    }
+  }
+  closePreviewModal() {
+    this.modalVisible.set(false);
   }
 
   /** Computeds para facilitar el binding */

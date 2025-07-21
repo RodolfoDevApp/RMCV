@@ -1,0 +1,21 @@
+/* skills.component.scss */
+
+.section-title {
+  margin: 0;
+  font-weight: 500;         // Seminegrita
+  letter-spacing: 1px;      // Espaciado de letra
+  text-transform: uppercase;
+}
+
+nav[mat-tab-nav-bar] {
+  margin-bottom: 24px;
+  // Opcional: ajustar el indicador de la pestaña
+  .mat-ink-bar {
+    height: 3px;
+    border-radius: 4px 4px 0 0;
+  }
+  a.mat-tab-link {
+    font-weight: 500;
+    padding: 0 0px;
+  }
+}
