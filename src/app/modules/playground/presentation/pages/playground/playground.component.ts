@@ -6,6 +6,7 @@ import { ResizeFromTopDirective } from '../../directives/resize-from-top.directi
 import { PlaygroundState } from '../../../application/state/playground.state';
 import { ConfigLauncherComponent } from '../../components/mobile/config-launcher/config-launcher.component';
 import { SidebarLauncherComponent } from '../../components/mobile/sidebar-launcher/sidebar-launcher.component';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-playground',
@@ -23,5 +24,22 @@ export class PlaygroundComponent {
 
   onResized = (newHeight: number) => {
   this.configHeightPercent = newHeight;
-};
+}
+  constructor(private breakpointObserver: BreakpointObserver) {}
+
+ ngOnInit(): void {
+    this.breakpointObserver.observe([
+      Breakpoints.XSmall,
+      Breakpoints.Small,
+      Breakpoints.Medium,
+      Breakpoints.Large,
+      Breakpoints.XLarge
+    ]).subscribe(result => {
+      if (result.breakpoints[Breakpoints.XSmall] ) {
+        this.configHeightPercent = 0;
+      }else {
+        this.configHeightPercent = 50;
+      }
+    });
+  }
 }
