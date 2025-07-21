@@ -6,9 +6,12 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+  "deploy": "ng build --configuration production --base-href /RMCV/ && cp dist/cv-rm/browser/index.html dist/cv-rm/browser/404.html && npx angular-cli-ghpages --dir=dist/cv-rm/browser"
+
   },
   "private": true,
+    "homepage": "https://github.com/RodolfoDevApp/RMCV",
   "dependencies": {
     "@angular/animations": "^17.3.0",
     "@angular/cdk": "^17.3.10",
