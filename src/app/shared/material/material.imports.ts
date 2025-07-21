@@ -9,6 +9,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+
 
 export const MATERIAL_IMPORTS = [
   MatToolbarModule,
@@ -22,4 +24,5 @@ export const MATERIAL_IMPORTS = [
   MatMenuModule,
   MatSidenavModule,
   MatListModule,
+  MatGridListModule
 ];

@@ -2,17 +2,26 @@
   <!-- Banner principal -->
   <section class="hero-banner">
     <div class="overlay-content">
-      <h1>Desarrollo fullstack</h1>
-      <p></p>
+      <h1 class="typing-container">
+        <span class="typing-text"></span>
+        <span class="typing-cursor">|</span>
+      </h1>
+      <p>Construyo soluciones escalables, mantenibles y centradas en arquitectura limpia.</p>
     </div>
   </section>
 
-  <!-- Habilidades (6 bullets en 2 filas de 3) -->
+  <!-- Habilidades -->
   <section class="skills-grid">
-    <div class="skill-card" *ngFor="let skill of skills">
-      <div class="icon"></div>
-      <span>{{ skill.label }}</span>
-    </div>
+    <mat-grid-list [cols]="gridCols" gutterSize="16px" rowHeight="1:1">
+      <mat-grid-tile *ngFor="let skill of skills">
+        <mat-card class="skill-card mat-elevation-z4">
+          <div class="card-overlay"></div>
+          <mat-card-content>
+            <h3>{{ skill.label }}</h3>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
   </section>
 
   <!-- Imagen inferior -->

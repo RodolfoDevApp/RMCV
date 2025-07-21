@@ -47,3 +47,97 @@ a {
 html {
   scroll-behavior: smooth;
 }
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem;
+
+  .hero-banner,
+  .bottom-banner {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 2rem 4rem;
+    color: white;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+
+    &.hero-banner {
+      background-image: url('./assets/imgs/banner-principal.png');
+    }
+
+    &.bottom-banner {
+      background-image: url('./assets/imgs/banner-final.png');
+    }
+
+    .overlay-content {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 60%;
+
+      h1, h2 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
+      p {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      @media screen and (max-width: 768px) {
+        max-width: 100%;
+        text-align: center;
+        padding: 1rem;
+      }
+    }
+  }
+
+  .skills-grid {
+    mat-grid-tile {
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      overflow: hidden;
+
+      .skill-card {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+        color: white;
+        border-radius: 12px;
+        background-color: rgba(0, 0, 0, 0.4);
+
+        .card-overlay {
+          position: absolute;
+          inset: 0;
+          background-color: rgba(0, 0, 0, 0.4);
+          z-index: 1;
+        }
+
+        mat-card-content {
+          position: relative;
+          z-index: 2;
+
+          h3 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+}
