@@ -28,14 +28,9 @@ export class FormComponent {
   }
 
   submit() {
-    console.log('entra al submit?', this.fg()?.valid)
     const form = this.fg();
     if (form?.valid) {
-      const vw = window.innerWidth;
-      const vh = window.innerHeight;
-      const modalWidth = `${Math.round(vw * 0.8)}px`;
-      const modalHeight = `${Math.round(vh * 0.7)}px`;
-
+      
       // 1) Obtén los datos introducidos
       const dataJson = JSON.stringify(form.value, null, 2);
 
@@ -51,10 +46,10 @@ export class FormComponent {
         actions: [{ label: 'Cerrar', role: 'default' }],
         contentType: 'plainText',
         contentText: dataJson,
-        width: '400px',
-        height: '400px',
-        maxWidth: '400px',
-        maxHeight: '400px',
+        width: '50%',
+        height: '100%',
+        maxWidth: '100%',
+        maxHeight: '100%',
         verticalAlign: 'center',
         enterAnimation: 'fade',
         exitAnimation: 'fade',
@@ -69,9 +64,10 @@ export class FormComponent {
         lineHeight: '1.4',
         textColor: '#333'
       });
-
-      // 3) Dispara la apertura del modal
-      this.state.showModal();
+      
+      this.state.openPreviewModal(this.state.modalConfig()!);
+      // // 3) Dispara la apertura del modal
+      // this.state.showModal();
     }
   }
 
