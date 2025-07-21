@@ -1,0 +1,1 @@
+import{Pb as r,Tb as i,ka as n,yb as o,zb as a}from"./chunk-44NT2ZHG.js";var c=(()=>{class t{static{this.\u0275fac=function(e){return new(e||t)}}static{this.\u0275cmp=n({type:t,selectors:[["app-patterns"]],standalone:!0,features:[i],decls:2,vars:0,template:function(e,p){e&1&&(o(0,"p"),r(1,"patterns works!"),a())}})}}return t})();export{c as PatternsComponent};
