@@ -1,11 +1,3 @@
-:host {
-  display: inline-block;
-}
-:host(.full-width) {
-  display: block;
-  width: 100%;
-}
-
 /* Estilo base de la card */
 mat-card {
   width: 100%;

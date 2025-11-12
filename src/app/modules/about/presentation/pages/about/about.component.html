@@ -1,1 +1,193 @@
-<p>about works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Juan Pérez - Desarrollador Full Stack Senior</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <h1 class="logo">Juan Pérez</h1>
+      <nav class="nav">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contacto">Contacto</a>
+        <a href="cv.pdf" download class="btn-cv">Descargar CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-text">
+        <h2>Desarrollador Full Stack Senior</h2>
+        <p>Construyo soluciones digitales robustas, escalables y centradas en el usuario.</p>
+        <div class="hero-buttons">
+          <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+          <a href="#contacto" class="btn btn-secondary">Contactar</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="tu-foto.jpg" alt="Foto de Juan Pérez" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre mí -->
+  <section id="sobre-mi" class="section">
+    <div class="container">
+      <h3>Sobre mí</h3>
+      <p>
+        Soy un desarrollador full stack con más de 8 años de experiencia creando aplicaciones web modernas y eficientes.
+        Mi enfoque combina un dominio técnico sólido con una visión orientada al negocio para entregar soluciones que realmente aporten valor.
+      </p>
+      <p>
+        Me especializo en tecnologías como React, Node.js y bases de datos SQL/NoSQL, siempre aplicando buenas prácticas y metodologías ágiles.
+      </p>
+      <p><strong>Tecnologías clave:</strong> React · Node.js · Express · MongoDB · PostgreSQL · Docker · AWS</p>
+      <a href="cv.pdf" download class="btn btn-primary">Descargar CV</a>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+  <section id="proyectos" class="section bg-light">
+    <div class="container">
+      <h3>Proyectos destacados</h3>
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <img src="ecommerce.png" alt="Plataforma de E-commerce" />
+          <h4>Plataforma de E-commerce</h4>
+          <p>Desarrollé una plataforma de comercio electrónico escalable que soporta miles de usuarios concurrentes. Frontend en React, backend RESTful con Node.js y MongoDB.</p>
+          <div class="project-links">
+            <a href="#" target="_blank">Demo</a> | <a href="#" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="dashboard.png" alt="Dashboard financiero" />
+          <h4>Dashboard de análisis financiero</h4>
+          <p>Dashboard interactivo para análisis de datos financieros con gráficos dinámicos y actualizaciones en tiempo real usando React y WebSockets.</p>
+          <div class="project-links">
+            <a href="#" target="_blank">Demo</a> | <a href="#" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="gestion.png" alt="Sistema de gestión interna" />
+          <h4>Sistema de gestión interna</h4>
+          <p>Lideré el desarrollo de un sistema de gestión para una empresa mediana que optimizó sus procesos internos. Backend en Node.js y PostgreSQL, frontend con Vue.js.</p>
+          <div class="project-links">
+            <a href="#" target="_blank">Demo</a> | <a href="#" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Habilidades -->
+  <section id="habilidades" class="section">
+    <div class="container">
+      <h3>Habilidades técnicas</h3>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Frontend</h4>
+          <ul>
+            <li>React</li>
+            <li>Vue.js</li>
+            <li>JavaScript (ES6+)</li>
+            <li>HTML5 & CSS3</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Backend</h4>
+          <ul>
+            <li>Node.js & Express</li>
+            <li>Python</li>
+            <li>REST APIs</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Bases de datos</h4>
+          <ul>
+            <li>MongoDB</li>
+            <li>PostgreSQL</li>
+            <li>MySQL</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>DevOps & Cloud</h4>
+          <ul>
+            <li>Docker</li>
+            <li>AWS</li>
+            <li>CI/CD (GitHub Actions, Jenkins)</li>
+          </ul>
+        </div>
+      </div>
+      <h4>Habilidades blandas</h4>
+      <p>Comunicación efectiva · Liderazgo de equipos · Resolución de problemas · Trabajo colaborativo</p>
+    </div>
+  </section>
+
+  <!-- Experiencia -->
+  <section id="experiencia" class="section bg-light">
+    <div class="container">
+      <h3>Experiencia laboral</h3>
+      <article>
+        <h4>Senior Full Stack Developer - Tech Solutions Inc.</h4>
+        <time>Ene 2020 – Presente</time>
+        <ul>
+          <li>Lideré un equipo de 5 desarrolladores en la creación de aplicaciones web escalables.</li>
+          <li>Implementé arquitecturas basadas en microservicios, mejorando la mantenibilidad y escalabilidad.</li>
+          <li>Aumenté la velocidad de entrega en un 30% mediante metodologías ágiles.</li>
+        </ul>
+      </article>
+      <article>
+        <h4>Full Stack Developer - Innovatech</h4>
+        <time>Mar 2016 – Dic 2019</time>
+        <ul>
+          <li>Desarrollé y mantuve múltiples aplicaciones web para clientes internacionales.</li>
+          <li>Optimicé consultas en bases de datos, mejorando el rendimiento en un 40%.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="section">
+    <div class="container">
+      <h3>Contacto</h3>
+      <p>¿Quieres trabajar conmigo o tienes un proyecto en mente? ¡Hablemos!</p>
+      <form action="mailto:juan.perez@email.com" method="post" enctype="text/plain" class="contact-form">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="Nombre" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" required />
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="Mensaje" rows="4" required></textarea>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/juanperez" target="_blank" rel="noopener">LinkedIn</a> | 
+        <a href="https://github.com/juanperez" target="_blank" rel="noopener">GitHub</a> | 
+        <a href="mailto:juan.perez@email.com">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Juan Pérez. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

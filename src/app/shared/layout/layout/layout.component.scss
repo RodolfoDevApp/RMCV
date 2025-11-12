@@ -4,6 +4,7 @@
   height: 100vh;
   position: relative;
 }
+
 .layout-container {
   display: flex;
   flex: 1;
@@ -11,11 +12,12 @@
 }
 
 .layout-content {
+  background: transparent;
   flex: 1;
   overflow-y: auto;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  height: calc(100vh - 128px); 
+  height: calc(100vh - 128px);
   padding-left: 16px;
   padding-right: 16px;
 

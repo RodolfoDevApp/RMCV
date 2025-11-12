@@ -1,33 +1,168 @@
-<div class="home-container">
-  <!-- Banner principal -->
-  <section class="hero-banner">
-    <div class="overlay-content">
-      <h1 class="typing-container">
-        <span class="typing-text"></span>
-        <span class="typing-cursor">|</span>
-      </h1>
-      <p>Construyo soluciones escalables, mantenibles y centradas en arquitectura limpia.</p>
-    </div>
-  </section>
+<!-- Fondo ambiental scroll-reactive -->
+<div class="ambient-bg"></div>
 
-  <!-- Habilidades -->
-  <section class="skills-grid">
-    <mat-grid-list [cols]="gridCols" gutterSize="16px" rowHeight="1:1">
-      <mat-grid-tile *ngFor="let skill of skills">
-        <mat-card class="skill-card mat-elevation-z4">
-          <div class="card-overlay"></div>
-          <mat-card-content>
-            <h3>{{ skill.label }}</h3>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </section>
+<!-- Hero (usa tu imagen/texto actual) -->
+<section class="hero-banner">
+  <div class="typing-container">
+    <span class="typing-text"></span><span class="typing-cursor">|</span>
+  </div>
+</section>
 
-  <!-- Imagen inferior -->
-  <section class="bottom-banner">
-    <div class="overlay-content">
-      <h2>Diseño modular y reutilizable</h2>
+<!-- Core skills -->
+<section class="section">
+  <h2 class="section-title">Core skills</h2>
+
+  <div class="skills-grid">
+    <article class="skill reveal-on-scroll">
+      <div class="skill-icon">O</div>
+      <h3 class="skill-title">OOP</h3>
+      <p class="skill-sub">Clean, testable code</p>
+    </article>
+
+    <article class="skill reveal-on-scroll">
+      <div class="skill-icon">R</div>
+      <h3 class="skill-title">RxJS</h3>
+      <p class="skill-sub">Reactive patterns</p>
+    </article>
+
+    <article class="skill reveal-on-scroll">
+      <div class="skill-icon">S</div>
+      <h3 class="skill-title">SOLID</h3>
+      <p class="skill-sub">Maintainable design</p>
+    </article>
+
+    <article class="skill reveal-on-scroll">
+      <div class="skill-icon">H</div>
+      <h3 class="skill-title">Hexagonal</h3>
+      <p class="skill-sub">Ports & Adapters</p>
+    </article>
+
+    <article class="skill reveal-on-scroll">
+      <div class="skill-icon">E</div>
+      <h3 class="skill-title">Escalable</h3>
+      <p class="skill-sub">Event-driven, DDD</p>
+    </article>
+
+    <article class="skill reveal-on-scroll">
+      <div class="skill-icon">R</div>
+      <h3 class="skill-title">Responsive</h3>
+      <p class="skill-sub">UX first</p>
+    </article>
+
+    <article class="skill reveal-on-scroll">
+      <div class="skill-icon">B</div>
+      <h3 class="skill-title">Backend</h3>
+      <p class="skill-sub">.NET, Java, Go</p>
+    </article>
+
+    <article class="skill reveal-on-scroll">
+      <div class="skill-icon">F</div>
+      <h3 class="skill-title">Frontend</h3>
+      <p class="skill-sub">Angular 18, MFE</p>
+    </article>
+  </div>
+</section>
+
+<!-- Impact strip: metricas y social proof -->
+<section class="section impact">
+  <div class="impact-grid">
+    <div class="impact-card reveal-on-scroll">
+      <div class="impact-number metric" data-target="12">0</div>
+      <div class="impact-label">microservicios</div>
     </div>
-  </section>
-</div>
+    <div class="impact-card reveal-on-scroll">
+      <div class="impact-number metric" data-target="100">0</div>
+      <div class="impact-label">% unit tests logica</div>
+    </div>
+    <div class="impact-card reveal-on-scroll">
+      <div class="impact-number metric" data-target="5">0</div>
+      <div class="impact-label">lenguajes en stack</div>
+    </div>
+    <div class="impact-card reveal-on-scroll">
+      <div class="impact-number metric" data-target="24">0</div>
+      <div class="impact-label">pipelines CI/CD</div>
+    </div>
+  </div>
+
+  <div class="brands">
+    <span class="brand">.NET</span>
+    <span class="brand">Java</span>
+    <span class="brand">Go</span>
+    <span class="brand">Rust</span>
+    <span class="brand">Angular</span>
+    <span class="brand">RabbitMQ</span>
+    <span class="brand">PostgreSQL</span>
+  </div>
+</section>
+
+<!-- Casos compactos: Problem -> Action -> Result -->
+<section class="section cases">
+  <h2 class="section-title">Casos de impacto</h2>
+  <div class="cases-grid">
+    <article class="case reveal-on-scroll">
+      <h3>Orders service</h3>
+      <p class="p">Problem: duplicidad de eventos.</p>
+      <p class="a">Action: outbox + idempotencia + claves naturales.</p>
+      <p class="r">Result: 0 duplicados en pruebas de estres.</p>
+    </article>
+    <article class="case reveal-on-scroll">
+      <h3>Cart service</h3>
+      <p class="p">Problem: consistencia al aplicar descuentos.</p>
+      <p class="a">Action: dominio explicito y saga de confirmacion.</p>
+      <p class="r">Result: ordenes coherentes y trazables.</p>
+    </article>
+    <article class="case reveal-on-scroll">
+      <h3>Search (Rust)</h3>
+      <p class="p">Problem: latencia en busquedas.</p>
+      <p class="a">Action: index local (Tantivy) + paginado.</p>
+      <p class="r">Result: < 50 ms p95 en dataset de demo.</p>
+    </article>
+  </div>
+</section>
+
+<!-- Scrollytelling de arquitectura -->
+<section class="section arch">
+  <div class="arch-wrap">
+    <aside class="arch-diagram">
+      <div class="lane">
+        <div class="bullet" data-for="step-1">Catalog</div>
+        <div class="bullet" data-for="step-2">Orders</div>
+        <div class="bullet" data-for="step-3">Payments</div>
+      </div>
+      <div class="exchanges">
+        <div class="ex">catalog.events</div>
+        <div class="ex">orders.events</div>
+        <div class="ex">payments.events</div>
+      </div>
+    </aside>
+
+    <div class="arch-steps">
+      <article id="step-1" class="arch-step">
+        <h4>1) Catalog publica evento ProductCreated</h4>
+        <p>Producer: Catalog. Exchange: catalog.events. Routing: product.created</p>
+      </article>
+      <article id="step-2" class="arch-step">
+        <h4>2) Orders consume y crea proyeccion</h4>
+        <p>Consumer: Orders. Consistencia eventual. Outbox para OrderPlaced.</p>
+      </article>
+      <article id="step-3" class="arch-step">
+        <h4>3) Payments procesa OrderPlaced</h4>
+        <p>Producer: Orders. Consumer: Payments. Respuesta PaymentAuthorized.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section class="section cta-final reveal-on-scroll">
+  <div class="cta-card">
+    <h3>Listo para entrevista</h3>
+    <p>Arquitectura limpia, eventos, CI/CD. Ve el CV o el codigo.</p>
+    <div class="cta-actions">
+      <!-- Reemplaza href con tu enlace real -->
+      <a class="btn primary"  href="assets/cv/RodolfoMarban-CV.pdf"
+   download target="_blank" rel="noopener">Descargar CV (PDF)</a>
+      <a class="btn ghost" href="https://github.com/RodolfoDevApp" target="_blank" rel="noopener">Ver repos</a>
+    </div>
+  </div>
+</section>
