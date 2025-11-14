@@ -1,0 +1,290 @@
+{
+  "nav": { "home": "Home", "playground": "Playground", "tech": "Tech knowledge", "resume": "Resume" },
+  "hero": { "title": "I design and ship scalable, maintainable systems.", "subtitle": "Event-driven microservices, Clean/Hex architecture, CI/CD", "cta1": "Download Resume (PDF)", "cta2": "View GitHub" },
+  "skills": { "title":"Core skills", "oopSub":"Clean, testable code", "rxjsSub":"Reactive patterns", "solidSub":"Maintainable design", "hexSub":"Ports & Adapters", "scalableSub":"Event-driven, DDD", "responsiveSub":"UX first", "backendSub":".NET, Java, Go", "frontendSub":"Angular 18, MFE",
+  "tabs": {
+    "frontend": "Frontend",
+    "backend": "Backend"
+  },
+  "backend": {
+    "title": "Back-end development",
+    "oop": {
+      "title": "OOP",
+      "body": "Object-oriented programming: encapsulation, inheritance, polymorphism and abstraction."
+    },
+    "solid": {
+      "title": "SOLID",
+      "body": "SRP in controllers, OCP in services, LSP in inheritance, ISP in interfaces and DIP in repositories."
+    },
+    "arch": {
+      "title": "Architecture",
+      "body": "Hexagonal/Clean: domain, use cases and infrastructure decoupled and easy to test."
+    },
+    "patterns": {
+      "title": "Patterns",
+      "body": "Repository, Factory and Strategy for flexible persistence and service logic."
+    },
+    "apis": {
+      "title": "REST APIs",
+      "body": "RESTful design with versioning, JWT authentication and global exception handling."
+    },
+    "practices": {
+      "title": "Best practices",
+      "body": "Unit tests, DTO validation, error handling and structured logging."
+    }
+  },
+   "frontend": {
+    "title": "Frontend development",
+    "oop": {
+      "title": "OOP",
+      "body": "Encapsulation, inheritance and polymorphism in components and services."
+    },
+    "solid": {
+      "title": "SOLID",
+      "body": "Applying SRP, OCP, LSP, ISP and DIP for scalable code."
+    },
+    "arch": {
+      "title": "Architecture",
+      "body": "Hexagonal and Clean Architecture: well separated and decoupled layers."
+    },
+    "reactivity": {
+      "title": "Reactivity",
+      "body": "RxJS and Signals for reactive data flows and state management."
+    },
+    "uiux": {
+      "title": "UI/UX",
+      "body": "Angular Material: theming, responsive layouts and accessibility."
+    },
+    "practices": {
+      "title": "Best practices",
+      "body": "Dependency injection, modularity and unit testing."
+    }
+  }
+},
+  "impact": { "micro":"microservices", "tests":"% unit test coverage (business logic)", "langs":"languages in the stack", "pipelines":"CI/CD pipelines" },
+  "cases": { "title":"Impact cases",
+    "orders":{"p":"Problem: duplicated events.","a":"Action: outbox + idempotency + natural keys.","r":"Result: 0 duplicates in stress tests."},
+    "cart":{"p":"Problem: discount consistency.","a":"Action: explicit domain + confirmation saga.","r":"Result: coherent, traceable orders."},
+    "search":{"p":"Problem: search latency.","a":"Action: local index (Tantivy) + pagination.","r":"Result: < 50 ms p95 on demo dataset."}
+  },
+  "arch": { "s1t":"1) Catalog publishes ProductCreated", "s1d":"Producer: Catalog. Exchange: catalog.events. Routing: product.created",
+            "s2t":"2) Orders consumes and builds a projection", "s2d":"Consumer: Orders. Outbox for OrderPlaced.",
+            "s3t":"3) Payments processes OrderPlaced", "s3d":"Consumer: Payments. Reply: PaymentAuthorized." },
+  "cta": { "title":"Ready to interview", "body":"Clean architecture, event-driven, CI/CD. View the CV or the code.", "btnPdf":"Download CV (PDF)", "btnRepos":"View repositories" }
+,"playground": {
+  "button": {
+      "label": "Demo button",
+      "tooltip": "Click here"
+    },
+    "card": {
+      "title": "Card title",
+      "subtitle": "Optional subtitle",
+      "content": "This is the sample content of the card."
+    },
+    "input": {
+      "placeholder": "Type here..."
+    },
+    "form": {
+      "submit": "Submit",
+"selectPlaceholder": "--",
+"modalTitle": "Form data",
+"modalClose": "Close",
+"modalAria": "Form data summary"
+,
+      "fields": {
+        "email": { "label": "Email" },
+        "age": { "label": "Age" },
+        "country": { "label": "Country" },
+        "state": { "label": "State" },
+        "city": { "label": "City" }
+      },
+      "validators": {
+        "required": "Required",
+        "email": "Invalid email format",
+        "numeric": "Numbers only"
+      }
+    },
+    "location": {
+      "country": {
+        "mx": "Mexico",
+        "es": "Spain"
+      },
+      "state": {
+        "jal": "Jalisco",
+        "cmx": "Mexico City",
+        "cat": "Catalonia",
+        "mad": "Madrid"
+      },
+      "city": {
+        "gdl": "Guadalajara",
+        "cdmx": "Mexico City",
+        "bcn": "Barcelona",
+        "mad": "Madrid"
+      }
+    },
+    "modal": {
+      "open": "Open modal",
+      "header": "Sample modal",
+      "content": "Example content for the modal.",
+      "actions": {
+        "cancel": "Cancel",
+        "accept": "Accept"
+      },
+      "ariaLabel": "Generic modal"
+    
+  },
+  "sidebar": {
+      "group": {
+        "atoms": "Atoms",
+        "molecules": "Molecules",
+        "organisms": "Organisms"
+      },
+      "item": {
+        "button": "Button",
+        "input": "Input",
+        "icon": "Icon",
+        "form": "Form",
+        "card": "Product card",
+        "modal": "Modal"
+      }
+    },
+  "preview": {
+    "placeholder": "Select a component from the sidebar"
+  },
+  "config": {
+    "placeholder": "Select a component to configure",
+     "button": {
+      "title": "Edit button",
+      "label": "Text",
+      "color": "Color",
+      "colorPrimary": "Primary",
+      "colorAccent": "Accent",
+      "colorWarn": "Warn",
+      "icon": "Icon",
+      "iconPosition": "Icon position",
+      "iconStart": "Start",
+      "iconEnd": "End",
+      "tooltip": "Tooltip",
+      "outline": "Outline",
+      "fullWidth": "Full width",
+      "disabled": "Disabled"
+    }
+  },
+  "cardConfig": {
+    "title": "Edit card",
+    "fields": {
+      "title": "Title",
+      "subtitle": "Subtitle",
+      "content": "Content",
+      "imageUrl": "Image URL",
+      "elevation": "Elevation"
+    },
+    "fullWidth": "Full width"
+  },
+  "formConfig": {
+    "title": "Configure dynamic form",
+    "fieldTitle": "Field {{index}}",
+    "removeField": "Remove",
+    "addField": "Add field",
+    "name": "Name",
+    "label": "Label",
+    "type": "Type",
+    "typeOptions": {
+      "text": "Text",
+      "email": "Email",
+      "number": "Number",
+      "select": "Select"
+    },
+    "required": "Required",
+    "validators": "Validators",
+    "validatorTypes": {
+      "required": "Required",
+      "email": "Email",
+      "numeric": "Numeric"
+    },
+    "validatorMessage": "Error message",
+    "addValidator": "Add validator",
+    "optionsEndpoint": "Options endpoint",
+    "endpoints": {
+      "countries": "countries",
+      "states": "states",
+      "cities": "cities"
+    }
+  },
+  "iconConfig": {
+    "title": "Edit icon",
+    "iconName": "Icon name",
+    "size": "Size (px)",
+    "color": "Color",
+    "spin": "Spin"
+  },
+  "inputConfig": {
+    "title": "Edit input",
+    "placeholder": "Placeholder",
+    "type": "Type",
+    "typeText": "Text",
+    "typePassword": "Password",
+    "typeEmail": "Email",
+    "typeNumber": "Number",
+    "prefixIcon": "Prefix icon",
+    "suffixIcon": "Suffix icon",
+    "disabled": "Disabled",
+    "fullWidth": "Full width"
+  },
+  "modalConfig": {
+    "title": "Configure modal",
+    "width": "Width",
+    "height": "Height",
+    "maxWidth": "Max width",
+    "maxHeight": "Max height",
+    "verticalAlign": "Vertical align",
+    "verticalAlignTop": "Top",
+    "verticalAlignCenter": "Center",
+    "verticalAlignBottom": "Bottom",
+    "backdrop": "Show backdrop",
+    "backdropColor": "Backdrop color",
+    "closeOnBackdropClick": "Close on outside click",
+    "closeOnEscape": "Close on Escape",
+    "showHeader": "Show header",
+    "headerText": "Header text",
+    "showFooter": "Show footer",
+    "actions": "Actions (JSON)",
+    "enterAnimation": "Enter animation",
+    "exitAnimation": "Exit animation",
+    "animationFade": "Fade",
+    "animationSlide": "Slide",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "borderRadius": "Border radius",
+    "ariaLabel": "ARIA label",
+    "role": "Role",
+    "roleDialog": "dialog",
+    "roleAlertdialog": "alertdialog",
+    "contentType": "Content type",
+    "contentPlainText": "Plain text",
+    "contentHtml": "HTML",
+    "contentMarkdown": "Markdown",
+    "contentList": "List",
+    "contentImage": "Image",
+    "contentText": "Text",
+    "contentHtmlLabel": "HTML",
+    "contentMarkdownLabel": "Markdown",
+    "listItems": "List items (comma-separated)",
+    "imageUrl": "Image URL",
+    "contentPadding": "Content padding",
+    "contentPaddingSmall": "Small",
+    "contentPaddingNormal": "Normal",
+    "contentPaddingLarge": "Large",
+    "contentAlignment": "Content alignment",
+    "contentAlignLeft": "Left",
+    "contentAlignCenter": "Center",
+    "contentAlignRight": "Right",
+    "scrollable": "Scrollable",
+    "fontSize": "Font size",
+    "lineHeight": "Line height",
+    "textColor": "Text color"
+  }  
+}
+
+}

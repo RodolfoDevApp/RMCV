@@ -1,0 +1,287 @@
+{
+  "nav": { "home": "Inicio", "playground": "Area de pruebas", "tech": "Conocimientos tecnicos", "resume": "CV" },
+  "hero": { "title": "Diseno y entrego sistemas escalables y mantenibles.", "subtitle": "Microservicios event-driven, Arquitectura Clean/Hex, CI/CD", "cta1": "Descargar CV (PDF)", "cta2": "Ver GitHub" },
+  "skills": { "title":"Habilidades clave", "oopSub":"Codigo limpio y testeable", "rxjsSub":"Patrones reactivos", "solidSub":"Diseno mantenible", "hexSub":"Ports & Adapters", "scalableSub":"Event-driven, DDD", "responsiveSub":"UX primero", "backendSub":".NET, Java, Go", "frontendSub":"Angular 18, MFE",
+  "tabs": {
+    "frontend": "Frontend",
+    "backend": "Backend"
+  },
+  "backend": {
+    "title": "Desarrollo backend",
+    "oop": {
+      "title": "OOP",
+      "body": "Programacion orientada a objetos: encapsulacion, herencia, polimorfismo y abstraccion."
+    },
+    "solid": {
+      "title": "SOLID",
+      "body": "SRP en controladores, OCP en servicios, LSP en herencias, ISP en interfaces y DIP en repositorios."
+    },
+    "arch": {
+      "title": "Arquitectura",
+      "body": "Hexagonal/Clean: dominio, casos de uso e infraestructura desacoplados y faciles de testear."
+    },
+    "patterns": {
+      "title": "Patrones",
+      "body": "Repositorio, Factoria y Estrategia para logica de persistencia y servicios flexibles."
+    },
+    "apis": {
+      "title": "APIs REST",
+      "body": "Diseno RESTful con versionado, autenticacion JWT y control de excepciones global."
+    },
+    "practices": {
+      "title": "Buenas practicas",
+      "body": "Pruebas unitarias, validacion de DTOs, manejo de errores y logging estructurado."
+    }
+  },
+  "frontend": {
+    "title": "Desarrollo frontend",
+    "oop": {
+      "title": "OOP",
+      "body": "Encapsulacion, herencia y polimorfismo en componentes y servicios."
+    },
+    "solid": {
+      "title": "SOLID",
+      "body": "Aplicacion de SRP, OCP, LSP, ISP y DIP para codigo escalable."
+    },
+    "arch": {
+      "title": "Arquitectura",
+      "body": "Hexagonal y Clean Architecture: capas bien separadas y desacopladas."
+    },
+    "reactivity": {
+      "title": "Reactividad",
+      "body": "RxJS y Signals para flujos de datos reactivos y gestion de estado."
+    },
+    "uiux": {
+      "title": "UI/UX",
+      "body": "Angular Material: theming, responsive y accesibilidad."
+    },
+    "practices": {
+      "title": "Buenas practicas",
+      "body": "Inyeccion de dependencias, modularidad y pruebas unitarias."
+    }
+  }
+},
+  "impact": { "micro":"microservicios", "tests":"% cobertura de unit tests (logica)", "langs":"lenguajes en el stack", "pipelines":"pipelines CI/CD" },
+  "cases": { "title":"Casos de impacto",
+    "orders":{"p":"Problema: eventos duplicados.","a":"Accion: outbox + idempotencia + claves naturales.","r":"Resultado: 0 duplicados en stress tests."},
+    "cart":{"p":"Problema: consistencia de descuentos.","a":"Accion: dominio explicito + saga de confirmacion.","r":"Resultado: ordenes coherentes y trazables."},
+    "search":{"p":"Problema: latencia de busqueda.","a":"Accion: indice local (Tantivy) + paginacion.","r":"Resultado: < 50 ms p95 en dataset demo."}
+  },
+  "arch": { "s1t":"1) Catalog publica ProductCreated", "s1d":"Productor: Catalog. Exchange: catalog.events. Routing: product.created",
+            "s2t":"2) Orders consume y construye proyeccion", "s2d":"Consumidor: Orders. Outbox para OrderPlaced.",
+            "s3t":"3) Payments procesa OrderPlaced", "s3d":"Consumidor: Payments. Respuesta: PaymentAuthorized." },
+  "cta": { "title":"Listo para entrevistar", "body":"Clean architecture, event-driven, CI/CD. Mira el CV o el codigo.", "btnPdf":"Descargar CV (PDF)", "btnRepos":"Ver repos" }
+  ,"playground": {
+    "button": {
+      "label": "Boton demo",
+      "tooltip": "Presiona aqui"
+    },
+    "card": {
+      "title": "Titulo de la tarjeta",
+      "subtitle": "Subtitulo opcional",
+      "content": "Este es el contenido de ejemplo de la tarjeta."
+    },
+    "input": {
+      "placeholder": "Escribe aqui..."
+    },
+    "form": {
+       "submit": "Enviar",
+    "selectPlaceholder": "--",
+    "modalTitle": "Datos del formulario",
+    "modalClose": "Cerrar",
+    "modalAria": "Resumen de datos del formulario",
+      "fields": {
+        "email": { "label": "Correo" },
+        "age": { "label": "Edad" },
+        "country": { "label": "Pais" },
+        "state": { "label": "Estado" },
+        "city": { "label": "Ciudad" }
+      },
+      "validators": {
+        "required": "Requerido",
+        "email": "Formato invalido",
+        "numeric": "Solo numeros"
+      }
+    },
+    "location": {
+      "country": {
+        "mx": "Mexico",
+        "es": "Espana"
+      },
+      "state": {
+        "jal": "Jalisco",
+        "cmx": "CDMX",
+        "cat": "Cataluna",
+        "mad": "Madrid"
+      },
+      "city": {
+        "gdl": "Guadalajara",
+        "cdmx": "Ciudad de Mexico",
+        "bcn": "Barcelona",
+        "mad": "Madrid"
+      }
+    },
+    "modal": {
+       "open": "Abrir modal",
+      "header": "Titulo del modal",
+      "content": "Contenido de ejemplo.",
+      "actions": {
+        "cancel": "Cancelar",
+        "accept": "Aceptar"
+      },
+      "ariaLabel": "Modal generico"
+    },
+    "sidebar": {
+      "group": {
+        "atoms": "Particulas",
+        "molecules": "Moleculas",
+        "organisms": "Organismos"
+      },
+      "item": {
+        "button": "Boton",
+        "input": "Input",
+        "icon": "Icono",
+        "form": "Formulario",
+        "card": "Tarjeta producto",
+        "modal": "Modal"
+      }
+    },
+  "preview": {
+    "placeholder": "Selecciona un componente del sidebar"
+  }, 
+  "config": {
+    "placeholder": "Selecciona un componente para configurar", 
+    "button": {
+      "title": "Editar boton",
+      "label": "Texto",
+      "color": "Color",
+      "colorPrimary": "Primario",
+      "colorAccent": "Acento",
+      "colorWarn": "Advertencia",
+      "icon": "Icono",
+      "iconPosition": "Posicion del icono",
+      "iconStart": "Inicio",
+      "iconEnd": "Fin",
+      "tooltip": "Tooltip",
+      "outline": "Outline",
+      "fullWidth": "Ancho completo",
+      "disabled": "Deshabilitado"
+    }
+  }, 
+  "cardConfig": {
+    "title": "Editar tarjeta",
+    "fields": {
+      "title": "Titulo",
+      "subtitle": "Subtitulo",
+      "content": "Contenido",
+      "imageUrl": "URL imagen",
+      "elevation": "Elevacion"
+    },
+    "fullWidth": "Ancho completo"
+  },
+  "formConfig": {
+    "title": "Configurar formulario dinamico",
+    "fieldTitle": "Campo {{index}}",
+    "removeField": "Eliminar",
+    "addField": "Anadir campo",
+    "name": "Nombre",
+    "label": "Etiqueta",
+    "type": "Tipo",
+    "typeOptions": {
+      "text": "Texto",
+      "email": "Correo",
+      "number": "Numero",
+      "select": "Select"
+    },
+    "required": "Requerido",
+    "validators": "Validaciones",
+    "validatorTypes": {
+      "required": "Requerido",
+      "email": "Correo",
+      "numeric": "Numerico"
+    },
+    "validatorMessage": "Mensaje de error",
+    "addValidator": "Anadir validacion",
+    "optionsEndpoint": "Endpoint de opciones",
+    "endpoints": {
+      "countries": "countries",
+      "states": "states",
+      "cities": "cities"
+    }
+  }, 
+  "iconConfig": {
+    "title": "Editar icono",
+    "iconName": "Nombre del icono",
+    "size": "Tamano (px)",
+    "color": "Color",
+    "spin": "Girar"
+  },
+  "inputConfig": {
+    "title": "Editar input",
+    "placeholder": "Placeholder",
+    "type": "Tipo",
+    "typeText": "Texto",
+    "typePassword": "Password",
+    "typeEmail": "Email",
+    "typeNumber": "Numero",
+    "prefixIcon": "Icono prefijo",
+    "suffixIcon": "Icono sufijo",
+    "disabled": "Deshabilitado",
+    "fullWidth": "Ancho completo"
+  },
+  "modalConfig": {
+    "title": "Configurar modal",
+    "width": "Ancho",
+    "height": "Alto",
+    "maxWidth": "Ancho maximo",
+    "maxHeight": "Alto maximo",
+    "verticalAlign": "Alineacion vertical",
+    "verticalAlignTop": "Arriba",
+    "verticalAlignCenter": "Centro",
+    "verticalAlignBottom": "Abajo",
+    "backdrop": "Mostrar backdrop",
+    "backdropColor": "Color de backdrop",
+    "closeOnBackdropClick": "Cerrar al hacer click fuera",
+    "closeOnEscape": "Cerrar con Escape",
+    "showHeader": "Mostrar header",
+    "headerText": "Texto de header",
+    "showFooter": "Mostrar footer",
+    "actions": "Acciones (JSON)",
+    "enterAnimation": "Animacion de entrada",
+    "exitAnimation": "Animacion de salida",
+    "animationFade": "Fade",
+    "animationSlide": "Slide",
+    "theme": "Tema",
+    "themeLight": "Claro",
+    "themeDark": "Oscuro",
+    "borderRadius": "Radio de borde",
+    "ariaLabel": "Etiqueta ARIA",
+    "role": "Rol",
+    "roleDialog": "dialog",
+    "roleAlertdialog": "alertdialog",
+    "contentType": "Tipo de contenido",
+    "contentPlainText": "Texto plano",
+    "contentHtml": "HTML",
+    "contentMarkdown": "Markdown",
+    "contentList": "Lista",
+    "contentImage": "Imagen",
+    "contentText": "Texto",
+    "contentHtmlLabel": "HTML",
+    "contentMarkdownLabel": "Markdown",
+    "listItems": "Elementos de lista (separados por coma)",
+    "imageUrl": "URL de imagen",
+    "contentPadding": "Padding de contenido",
+    "contentPaddingSmall": "Pequeno",
+    "contentPaddingNormal": "Normal",
+    "contentPaddingLarge": "Grande",
+    "contentAlignment": "Alineacion de contenido",
+    "contentAlignLeft": "Izquierda",
+    "contentAlignCenter": "Centro",
+    "contentAlignRight": "Derecha",
+    "scrollable": "Scrollable",
+    "fontSize": "Tamano de fuente",
+    "lineHeight": "Interlineado",
+    "textColor": "Color de texto"
+  }
+} 
+}
